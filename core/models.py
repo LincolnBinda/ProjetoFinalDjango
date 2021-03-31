@@ -65,6 +65,6 @@ class Mensalista(models.Model):
         return str(self.veiculo) + ' - ' + str(self.valor_mes)
 
 class MovMensalista(models.Model):
-    mensalista = models.ForeignKey(Mensalista)
+    mensalista = models.ForeignKey(Mensalista, on_delete=models.CASCADE)
     dt_pgto = models.DateField()
     total = models.DecimalField(max_digits=6, decimal_places=2)
